@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme (default) */
+  --color-canvas: 250 250 248;
+  --color-surface: 241 241 238;
+  --color-border: 227 227 222;
+  --color-ink: 11 14 20;
+  --color-muted: 91 98 112;
+}
+
+.dark {
+  /* Dark theme */
+  --color-canvas: 11 14 20;
+  --color-surface: 18 22 31;
+  --color-border: 33 39 52;
+  --color-ink: 231 233 238;
+  --color-muted: 139 147 167;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--color-canvas));
+  color: rgb(var(--color-ink));
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background-color: rgba(94, 234, 212, 0.28);
+  color: inherit;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(to bottom, transparent, rgb(var(--color-canvas)) 92%),
+    linear-gradient(to right, rgb(var(--color-muted) / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--color-muted) / 0.08) 1px, transparent 1px);
+  background-size: 100% 100%, 44px 44px, 44px 44px;
+}
+
+.card-surface {
+  background-color: rgb(var(--color-surface));
+  border: 1px solid rgb(var(--color-border));
+}
+
+.section-divider {
+  border-top: 1px solid rgb(var(--color-border));
+}
